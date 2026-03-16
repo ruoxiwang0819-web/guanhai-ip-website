@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观海 GUAN HAI | 酒店数字化与管理重塑</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            color: #f5f5f7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #86868b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 自定义滚动条 */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02); 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2); 
+        }
+
+    </style>
+</head>
+<body class="selection:bg-gray-700 selection:text-white pb-20">
+
+    <!-- 顶部导航 -->
+    <nav class="fixed w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-lg font-semibold tracking-wide text-white flex items-center gap-3">
+                <img src="avatar.jpg" alt="观海" class="w-8 h-8 rounded-full object-cover object-top border border-white/20">
+                观海 <span class="text-gray-500 text-xs font-normal tracking-widest ml-1">GUAN HAI</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-xs text-gray-400 tracking-widest uppercase">
+                <a href="#intro" class="hover:text-white transition-colors">合作内容</a>
+                <a href="#experiment" class="hover:text-white transition-colors">100天实验</a>
+                <a href="#insights" class="hover:text-white transition-colors">认知觉醒</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部：头像与主视觉 -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <div class="mb-10 inline-block p-1 rounded-full bg-gradient-to-b from-white/20 to-transparent">
+                <img src="avatar.jpg" 
+                     alt="观海头像" 
+                     class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-top border-4 border-black">
+            </div>
+            
+            <h1 class="text-gradient text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                在传统中坚守<br>在数字中进化
+            </h1>
+            <p class="text-lg md:text-xl text-[#86868b] mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                我是老王，笔名观海。32岁，酒店GM。<br>
+                10年酒店运营实战，全网 4.9+ 口碑。<br>从一线执行者到 AI 效率先驱，用技术重塑商业服务边界。
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#intro" class="px-8 py-3.5 bg-[#f5f5f7] text-black text-sm font-semibold rounded-full hover:bg-gray-300 transition-all">查看合作内容</a>
+                <a href="#experiment" class="px-8 py-3.5 bg-transparent border border-white/20 text-white text-sm font-semibold rounded-full hover:border-white transition-all flex items-center gap-2">
+                    <span>观看实验视频</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 板块 1：自我介绍与商务合作 -->
+    <section id="intro" class="py-32 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto reveal">
+            <h2 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-4 text-center">Part 01</h2>
+            <h3 class="text-3xl md:text-4xl font-semibold mb-16 text-center tracking-tight">核心能力与商业合作</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- 合作卡片 1 -->
+                <div class="glass-panel p-10 rounded-3xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6 text-xl">📊</div>
+                    <h4 class="text-xl font-semibold mb-3">酒店问题诊断</h4>
+                    <p class="text-[#86868b] text-sm leading-relaxed flex-grow">
+                        不只是发现问题，而是提供可执行的盈利模型。针对收益管理、成本管控、用户体验进行全盘复盘与调优，直击利润痛点。
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-white/10 text-xs text-gray-400 font-medium">适合：遇到营收瓶颈的单体/连锁酒店</div>
+                </div>
+
+                <!-- 合作卡片 2 -->
+                <div class="glass-panel p-10 rounded-3xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6 text-xl">⚙️</div>
+                    <h4 class="text-xl font-semibold mb-3">数字化管理系统搭建</h4>
+                    <p class="text-[#86868b] text-sm leading-relaxed flex-grow">
+                        将 GM 经验转化为算法效率。依托前沿 AI 工具构建自动化运营架构，打造高效的数据看板与差评处理体系，极简管理流程。
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-white/10 text-xs text-gray-400 font-medium">适合：渴望降本增效的酒店管理团队</div>
+                </div>
+
+                <!-- 合作卡片 3 -->
+                <div class="glass-panel p-10 rounded-3xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6 text-xl">🖋️</div>
+                    <h4 class="text-xl font-semibold mb-3">自媒体与 IP 推广</h4>
+                    <p class="text-[#86868b] text-sm leading-relaxed flex-grow">
+                        借助《酒店之王》IP 与成熟矩阵，协助品牌打破流量圈层。提供职场故事赋能与品牌曝光策略，实现商业价值跨界破局。
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-white/10 text-xs text-gray-400 font-medium">适合：需要品牌破圈的行业上下游企业</div>
+                </div>
+            </div>
+
+            <!-- 联系方式模块 -->
+            <div class="mt-24 pt-16 border-t border-white/5">
+                <h3 class="text-2xl font-semibold mb-10 text-center tracking-tight">开启重塑之旅</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    
+                    <!-- 微信/电话 -->
+                    <div onclick="copyContact('138-0000-0000', this)" class="glass-panel px-8 py-5 rounded-2xl flex items-center gap-5 cursor-pointer group w-full sm:w-auto transition-all">
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 group-hover:bg-green-500/20 group-hover:text-green-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="text-xs text-gray-500 mb-1">微信 / 电话</div>
+                            <div class="text-sm font-medium text-gray-200">180-0139-3952</div>
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-400 pl-4 border-l border-white/10 contact-status">点击复制</div>
+                    </div>
+
+                    <!-- 抖音 -->
+                    <div onclick="copyContact('GuanHai_Hotel', this)" class="glass-panel px-8 py-5 rounded-2xl flex items-center gap-5 cursor-pointer group w-full sm:w-auto transition-all">
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 group-hover:bg-blue-500/20 group-hover:text-blue-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="text-xs text-gray-500 mb-1">抖音号</div>
+                            <div class="text-sm font-medium text-gray-200">wb199209151313</div>
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-400 pl-4 border-l border-white/10 contact-status">点击复制</div>
+                    </div>
+
+                    <!-- 邮箱 -->
+                    <div onclick="copyContact('guanhai@example.com', this)" class="glass-panel px-8 py-5 rounded-2xl flex items-center gap-5 cursor-pointer group w-full sm:w-auto transition-all">
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 group-hover:bg-purple-500/20 group-hover:text-purple-400 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="text-xs text-gray-500 mb-1">商务邮箱</div>
+                            <div class="text-sm font-medium text-gray-200">1939397781@qq.com</div>
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity text-xs text-gray-400 pl-4 border-l border-white/10 contact-status">点击复制</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 板块 2：自律实验 100 天（1行4个视频，超过8个折叠） -->
+    <section id="experiment" class="py-32 px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto reveal">
+            <h2 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-4 text-center">Part 02</h2>
+            <h3 class="text-3xl md:text-4xl font-semibold mb-6 text-center tracking-tight">自律实验 100 天</h3>
+            <p class="text-center text-[#86868b] mb-16 max-w-2xl mx-auto">
+                挑战极度自律，探讨行为如何重塑人生。在这里记录我每天的思考、体能训练与 AI 实践。
+            </p>
+
+            <!-- 视频网格：一行 4 个 (lg:grid-cols-4) -->
+            <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 视频卡片生成模板 (共添加了10个示例，前8个显示，后2个隐藏) -->
+                <!-- 注意：这里的 video 标签去掉了 object-cover，改为了 object-contain，保证不被剪裁 -->
+                <!-- 实际使用时，请替换 src 为你的本地视频路径 -->
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="auto">
+                            <source src="0315.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 15：自律实验第13天</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">我做了一件90%的人都觉得不可能的事情</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 02：清晨五点的广州</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">早起的规律化建立与首日体能消耗情况汇报。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 03：收益管理的痛</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">结合今天酒店的RevPAR，聊聊成本管控模型。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 04：写作灵感复盘</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">《酒店之王》番茄小说断更危机及克服方式。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 05：饮食结构的调整</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">碳水循环与酒店自助餐的诱惑对抗。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 06：AI自动化尝试</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">如何用飞书多维表格抓取数据并自动分类。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video7.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 07：第一周总结</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">疲劳期来临，意志力与物理疲惫的对抗。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video8.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 08：酒店协会会议分享</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">海南民族酒店协会会议，关于行业未来的三点共识。</p>
+                    </div>
+                </div>
+
+                <!-- 超过 8 个的视频，初始化时会被 JS 隐藏 -->
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col hidden">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video9.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 09：神秘顾客体验测试</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">全网4.9分的底气来源于死磕每一处细节。</p>
+                    </div>
+                </div>
+
+                <div class="video-item glass-panel rounded-2xl overflow-hidden group flex flex-col hidden">
+                    <div class="aspect-[9/16] bg-black relative flex items-center justify-center">
+                        <video controls class="w-full h-full object-contain" preload="metadata">
+                            <source src="video10.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <h4 class="text-base font-semibold mb-1 text-gray-100">Day 10：里程碑与调整</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2">实验十分之一达成，调整接下来的OKR指标。</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- 加载更多按钮容器 -->
+            <div id="load-more-btn-container" class="text-center mt-12 hidden">
+                <button onclick="loadMoreVideos()" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors border-b border-gray-600 hover:border-white pb-1 text-sm">
+                    <span>加载更多视频</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 板块 3：认知觉醒（金句卡片） -->
+    <section id="insights" class="py-32 px-6 border-t border-white/5">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-4 text-center">Part 03</h2>
+            <h3 class="text-3xl md:text-4xl font-semibold mb-6 text-center tracking-tight">认知觉醒</h3>
+            <p class="text-center text-[#86868b] mb-16 max-w-2xl mx-auto">
+                商业的本质是人性的映射。这里是我在管理与写作中的思想碎片。<br>点击卡片右下角即可保存文字，随时温故。
+            </p>
+
+            <div class="space-y-6">
+                <!-- 认知卡片 1 -->
+                <div class="glass-panel p-8 md:p-10 rounded-3xl relative group">
+                    <div class="text-5xl text-white/10 absolute top-6 left-6 font-serif">"</div>
+                    <p class="text-lg md:text-xl font-light leading-relaxed text-gray-200 relative z-10 pl-6" id="quote-1">
+                        酒店行业的本质，不是出售一张带有床垫的客房，而是出售一段被精心设计的时间。用 AI 去做枯燥的数据，把人的温度留给服务本身。
+                    </p>
+                    <div class="mt-8 flex justify-between items-center">
+                        <span class="text-sm text-gray-500 font-medium">— 观海的管理复盘思考</span>
+                        <button onclick="copyText('quote-1', this)" class="text-xs px-4 py-2 bg-white/5 hover:bg-white/20 text-white rounded-full transition-colors flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            <span>复制金句</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 认知卡片 2 -->
+                <div class="glass-panel p-8 md:p-10 rounded-3xl relative group">
+                    <div class="text-5xl text-white/10 absolute top-6 left-6 font-serif">"</div>
+                    <p class="text-lg md:text-xl font-light leading-relaxed text-gray-200 relative z-10 pl-6" id="quote-2">
+                        大多数管理者的平庸，在于把“执行力”等同于“不假思索地重复”。真正的执行力，是在看清成本结构后，敢于重塑规则的破局力。
+                    </p>
+                    <div class="mt-8 flex justify-between items-center">
+                        <span class="text-sm text-gray-500 font-medium">— 观海的管理复盘</span>
+                        <button onclick="copyText('quote-2', this)" class="text-xs px-4 py-2 bg-white/5 hover:bg-white/20 text-white rounded-full transition-colors flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            <span>复制金句</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-12 text-center text-sm text-gray-600 border-t border-white/5">
+        <p class="mb-2">打破界限，持续进化。</p>
+        <p class="text-xs tracking-widest uppercase">© 2026 观海 GUAN HAI. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <!-- 交互脚本集合 -->
+    <script>
+        // === 1. 滚动淡入动画 (Scroll Reveal) ===
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // 页面加载时执行一次
+
+        // === 2. 复制金句功能 ===
+        function copyText(elementId, btnElement) {
+            var text = document.getElementById(elementId).innerText;
+            
+            // 使用更兼容的 fallback 复制方法 (适配 iframe 环境)
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                var originalHTML = btnElement.innerHTML;
+                btnElement.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-green-400">已保存至剪贴板</span>';
+                setTimeout(function() { btnElement.innerHTML = originalHTML; }, 2000);
+            } catch (err) {
+                console.error('复制失败', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // === 2.5 复制联系方式功能 ===
+        function copyContact(text, element) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                var statusEl = element.querySelector('.contact-status');
+                var originalText = statusEl.innerText;
+                var originalColorClass = statusEl.className;
+                
+                statusEl.innerText = '复制成功!';
+                statusEl.classList.remove('text-gray-400');
+                statusEl.classList.add('text-green-400');
+                
+                setTimeout(function() { 
+                    statusEl.innerText = originalText; 
+                    statusEl.className = originalColorClass;
+                }, 2000);
+            } catch (err) {
+                console.error('复制失败', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // === 3. 视频隐藏/加载更多逻辑 ===
+        const VISIBLE_VIDEOS_COUNT = 8;
+        let currentlyVisible = VISIBLE_VIDEOS_COUNT;
+
+        function initVideos() {
+            const allVideos = document.querySelectorAll('.video-item');
+            const loadMoreBtn = document.getElementById('load-more-btn-container');
+            
+            // 初始化显示状态
+            allVideos.forEach((video, index) => {
+                if (index >= VISIBLE_VIDEOS_COUNT) {
+                    video.classList.add('hidden');
+                } else {
+                    video.classList.remove('hidden');
+                }
+            });
+
+            // 如果总数大于8，显示加载更多按钮
+            if (allVideos.length > VISIBLE_VIDEOS_COUNT) {
+                loadMoreBtn.classList.remove('hidden');
+            }
+        }
+
+        function loadMoreVideos() {
+            const allVideos = document.querySelectorAll('.video-item');
+            const loadMoreBtn = document.getElementById('load-more-btn-container');
+            
+            // 每次点击再显示 4 个（或者全部显示）
+            let nextLimit = currentlyVisible + 4;
+            if (nextLimit > allVideos.length) nextLimit = allVideos.length;
+
+            for (let i = currentlyVisible; i < nextLimit; i++) {
+                allVideos[i].classList.remove('hidden');
+                // 触发一个简单的重绘动画
+                allVideos[i].style.opacity = '0';
+                setTimeout(() => {
+                    allVideos[i].style.transition = 'opacity 0.5s ease';
+                    allVideos[i].style.opacity = '1';
+                }, 50);
+            }
+
+            currentlyVisible = nextLimit;
+
+            // 如果已经显示完了，隐藏按钮
+            if (currentlyVisible >= allVideos.length) {
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+        // 页面加载完成后初始化视频布局
+        document.addEventListener('DOMContentLoaded', initVideos);
+
+    </script>
+</body>
+</html>
