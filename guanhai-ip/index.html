@@ -391,7 +391,7 @@
                 商业的本质是人性的映射，这里是我在管理与写作中的思想碎片。<br>点击卡片右下角即可保存文字，随时温故而知新。
             </p>
 
-            <div class="space-y-6">
+            <div id="quotes-container" class="space-y-6">
                  <!-- 认知卡片 1 -->
                 <div class="glass-panel p-8 md:p-10 rounded-3xl relative group">
                     <div class="text-5xl text-white/10 absolute top-6 left-6 font-serif">"</div>
@@ -434,8 +434,15 @@
                             <span>复制金句</span>
                         </button>
                     </div>
-                </div>
+                    </div>
+
+            <div id="load-more-quotes-btn" class="text-center mt-12 hidden">
+                <button onclick="loadMoreQuotes()" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors border-b border-gray-600 hover:border-white pb-1 text-sm">
+                    <span>阅读更多思考</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
             </div>
+
         </div>
     </section>
 
